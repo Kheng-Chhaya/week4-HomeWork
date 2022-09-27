@@ -1,0 +1,60 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" th:href="@{/}">All Students</a>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/create}">Add New Student</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <hr>
+
+          <form action="#" th:action="@{/create}" th:object="${students}" method="post">
+            <div class="mb-3">
+                <label for="id" class="form-label">Id</label>
+                <input th:field="*{id}" type="number" class="form-control" id="id" placeholder="Type Your ID">
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input th:field="*{name}" type="text" class="form-control" id="name" placeholder="Type Your Name">
+              </div>
+              <div class="mb-3">
+                <label for="from" class="form-label">From</label>
+                <input th:field="*{from}" type="text" class="form-control" id="from" placeholder="Where are from">
+              </div>
+              <div class="mb-3">
+                <label for="bio" class="form-label">Say your bio</label>
+                <textarea th:field="*{bio}" class="form-control" id="bio" rows="3"></textarea>
+              </div>
+              <button type="submit" value="submit">Create</button>
+          </form>
+    </div>
+
+ 
+
+   
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+   
+
+
+</body>
+</html>
